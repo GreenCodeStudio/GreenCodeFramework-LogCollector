@@ -13,12 +13,11 @@ class CoreEventListener extends AbstractEventListener
                 $curl = curl_init();
                 $payload = json_encode([
                     'projectKey' => $_ENV['greenlogcollector_key'],
-//                'userIdentifier' => $_COOKIE['id'] ?? '',
                     'userAgent' => $data->userAgent,
                     'ipAddress' => $data->ipAddress,
                     'url' => $data->url,
                     'created' => $this->created->format('Y-m-d H:i:s'),
-//                'pageOpenIdentifier' => $pageOpenIdentifier,
+                    'pageOpenIdentifier' => $data->pageOpenIdentifier,
                 ]);
 
                 curl_setopt_array($curl, [
