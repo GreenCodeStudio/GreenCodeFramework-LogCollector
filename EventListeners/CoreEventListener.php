@@ -18,6 +18,7 @@ class CoreEventListener extends AbstractEventListener
                     'url' => $data->url,
                     'created' => $this->created->format('Y-m-d H:i:s'),
                     'pageOpenIdentifier' => $data->pageOpenIdentifier,
+                    'headers' => $data->headers,
                 ]);
 
                 curl_setopt_array($curl, [
